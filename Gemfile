@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem "font-awesome-rails"
 # Using it to create the default folder for picking up the templates for angularjs
 gem 'angular-rails-templates'
-gem 'sass'
+gem 'sass', '3.2.19'
 # Use to install bower for front-end
 gem 'bower-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -19,7 +19,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+gem "foreman"
+group :production, :staging do
+  gem "rails_12factor"
+  gem "rails_stdout_logging"
+  gem "rails_serve_static_assets"
+end
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
